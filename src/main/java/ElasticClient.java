@@ -9,5 +9,11 @@ public class ElasticClient {
     public static void main(String[] args) {
         Client client = new TransportClient()
                 .addTransportAddress(new InetSocketTransportAddress("localhost", 9300));
+        /**
+        YOUR QUERIES HERE:
+        SearchResponse searchResponse = client.prepareSearch("inventi")
+                .setQuery(QueryBuilders.matchAllQuery()).get();
+        **/
+        client.close();
     }
 }

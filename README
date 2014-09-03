@@ -9,7 +9,28 @@
 
 
 
-
-Run ElasticServer.java - this is working elasticsearch server on localhost:9300
+Run ElasticServer.java - this is working elasticsearch server on localhost:9200
 
 Use ElasticClient.java to perform queries using Java Api
+
+Indexing data:
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-index_.html
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/_upserts.html
+
+Java api:
+http://www.elasticsearch.org/guide/en/elasticsearch/client/java-api/current/
+
+Aggregations:
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations.html
+
+Task:
+1. Insert inventi employees
+2. Get employee age mininum, maximum, sum and average   \  I suggest we use Java api
+3. Get most popular employee names :)                   /  for these 2 tasks
+
+To insert:
+curl -XPUT 'http://localhost:9200/inventi/Employee/1' -d '{
+    "name" : "Jonas",
+    "age" : 25,
+    "cool" : true
+}'

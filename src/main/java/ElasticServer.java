@@ -1,4 +1,4 @@
-import org.elasticsearch.node.Node;
+import org.elasticsearch.node.NodeBuilder;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
@@ -7,8 +7,9 @@ import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
  */
 public class ElasticServer {
     public static void main(String[] args) {
-        Node node = nodeBuilder().client(false).node();
-        node.start();
+        NodeBuilder nodeBuilder = nodeBuilder().client(false);
+        nodeBuilder.settings().put("script.disable_dynamic", false);
+        nodeBuilder.build().start();
         while (true) {
 
         }
