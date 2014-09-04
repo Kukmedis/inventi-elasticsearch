@@ -9,6 +9,7 @@ public class ElasticServer {
     public static void main(String[] args) {
         NodeBuilder nodeBuilder = nodeBuilder().client(false);
         nodeBuilder.settings().put("script.disable_dynamic", false);
+        nodeBuilder.settings().put("cluster.name", "jonas");
         nodeBuilder.build().start();
         while (true) {
 
